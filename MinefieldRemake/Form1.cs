@@ -27,5 +27,19 @@ namespace MinefieldRemake
             level = new LevelManager(this);
             level.Load();
         }
+
+        //Update Game Per 100 ms.
+        private void Update(object sender, EventArgs e)
+        {
+            if (level.GameState=="playing")
+            {
+                level.Update();
+            }
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

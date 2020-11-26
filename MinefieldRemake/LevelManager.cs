@@ -11,7 +11,7 @@ namespace MinefieldRemake
     class LevelManager : IGame
     {
         #region PROPS
-        private string GameState { get; set; }
+        public string GameState { get; set; }
         private int GamePoint { get; set; }
         private int RowCount { get; set; }
         private int ColumnCount { get; set; }
@@ -22,8 +22,9 @@ namespace MinefieldRemake
         #endregion
 
         #region GLOBAL VARIABLES
-        Panel[,] addedPanels;
+        Panel[,] boxes;
         Form screen;
+        Mine mine;
         #endregion
 
         //Constructor
@@ -38,9 +39,9 @@ namespace MinefieldRemake
             GamePoint = 0;
             RowCount = 14;
             ColumnCount = 6;
-            addedPanels = new Panel[ColumnCount,RowCount];
+            boxes = new Panel[ColumnCount,RowCount];
+            mine = new Mine();
         }
-
 
         //Load Level
         public void Load()
@@ -50,32 +51,55 @@ namespace MinefieldRemake
             {
                 for (int j = 0; j < RowCount; j++)
                 {
-                    addedPanels[i, j] = new Panel();
-                    addedPanels[i, j].Location = new Point(RefX, RefY);
-                    addedPanels[i, j].Size = new Size(Width, Height);
-                    addedPanels[i, j].BackColor = Color.White;
-                    addedPanels[i, j].Cursor = Cursors.Hand;
-                    screen.Controls.Add(addedPanels[i, j]);
+                    boxes[i, j] = new Panel();
+                    boxes[i, j].Location = new Point(RefX, RefY);
+                    boxes[i, j].Size = new Size(Width, Height);
+                    boxes[i, j].BackColor = Color.White;
+                    boxes[i, j].Cursor = Cursors.Hand;
+                    boxes[i, j].Tag = "box";
+                    screen.Controls.Add(boxes[i, j]);
                     RefX += Width + 10;
                 }
                 RefY += Height + 10;
                 RefX = 12;
             }
+            mine.Load(boxes);
         }
 
-        public void Click()
-        {
-            //TODO
-        }
-
+        //When user does mouse rigth click, add flag
         public void AddFlag()
         {
             //TODO
         }
 
+        //Update Game
         public void Update()
         {
             //TODO
+            for (int i = 0; i < ColumnCount; i++)
+            {
+                for (int j = 0; j < RowCount; j++)
+                {
+                    boxes[i, j].Click += new System.EventHandler(Click);
+                }
+            }
+        }
+
+        //Click 
+        public void Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ColumnCount; i++)
+            {
+                for (int j = 0; j < RowCount; j++)
+                {
+                    if ((string)boxes[i,j].Tag=="mine")
+                    {
+                        MessageBox.Show("Got You");
+                        GameState = "done";
+                        break;
+                    }
+                }
+            }
         }
     }
 }

@@ -3,19 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MinefieldRemake
 {
-    class Mine : IGame
+    class Mine
     {
-        public void Load()
+        #region PROPS
+        private int RowNumber { get; set; }
+        private int ColumnNumber { get; set; }
+        #endregion
+
+        #region GLOBAL VARIABLES
+        Random rnd;
+        #endregion
+
+        //Constructor
+        public Mine()
         {
-            //TODO
+            rnd = new Random();
+            RowNumber = rnd.Next(0, 6);
+            ColumnNumber = rnd.Next(0, 14);
         }
 
-        public void Update()
+
+        //Load Mine
+        public void Load(Panel[,] boxes)
         {
-            //TODO
+            boxes[RowNumber,ColumnNumber].Tag = "mine";
+        }
+
+        //Change Mine Loc. Per Click
+        public void Update(Panel[,] boxes)
+        {
+
         }
     }
 }
