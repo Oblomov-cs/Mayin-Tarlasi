@@ -27,6 +27,7 @@ namespace MinefieldRemake
             level = new LevelManager(this);
             level.Load();
         }
+<<<<<<< HEAD
 
         //Update Game Per 100 ms.
         private void Update(object sender, EventArgs e)
@@ -41,5 +42,7 @@ namespace MinefieldRemake
         {
 
         }
+=======
+>>>>>>> test
     }
 }

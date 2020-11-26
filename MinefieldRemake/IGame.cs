@@ -10,7 +10,10 @@ namespace MinefieldRemake
     interface IGame
     {
         void Load();
+<<<<<<< HEAD
 
         void Update();
+=======
+>>>>>>> test
     }
 }

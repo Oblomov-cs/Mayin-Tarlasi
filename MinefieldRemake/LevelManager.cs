@@ -19,6 +19,11 @@ namespace MinefieldRemake
         private int RefY { get; set; }
         private int Width { get; set; }
         private int Height { get; set; }
+<<<<<<< HEAD
+=======
+        private int RefI { get; set; }
+        private int RefJ { get; set; }
+>>>>>>> test
         #endregion
 
         #region GLOBAL VARIABLES
@@ -46,7 +51,10 @@ namespace MinefieldRemake
         //Load Level
         public void Load()
         {
+<<<<<<< HEAD
             //TODO
+=======
+>>>>>>> test
             for (int i = 0; i < ColumnCount; i++)
             {
                 for (int j = 0; j < RowCount; j++)
@@ -56,8 +64,14 @@ namespace MinefieldRemake
                     boxes[i, j].Size = new Size(Width, Height);
                     boxes[i, j].BackColor = Color.White;
                     boxes[i, j].Cursor = Cursors.Hand;
+<<<<<<< HEAD
                     boxes[i, j].Tag = "box";
                     screen.Controls.Add(boxes[i, j]);
+=======
+                    boxes[i, j].BackColor = Color.Green;
+                    screen.Controls.Add(boxes[i, j]);
+                    boxes[i, j].Click += new System.EventHandler(Click);
+>>>>>>> test
                     RefX += Width + 10;
                 }
                 RefY += Height + 10;
@@ -72,6 +86,7 @@ namespace MinefieldRemake
             //TODO
         }
 
+<<<<<<< HEAD
         //Update Game
         public void Update()
         {
@@ -101,5 +116,19 @@ namespace MinefieldRemake
                 }
             }
         }
+=======
+        //Click 
+        public void Click(object sender, EventArgs e)
+        {
+            //TODO
+            Panel currentBox = (Panel)sender;
+            if ((string)currentBox.Tag=="mine")
+            {
+                //TODO
+                MessageBox.Show("Over!");
+            }
+        }
+
+>>>>>>> test
     }
 }
