@@ -1,0 +1,10 @@
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\bin\Debug\MinefieldRemake.exe.config
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\bin\Debug\MinefieldRemake.exe
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\bin\Debug\MinefieldRemake.pdb
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\obj\Debug\MinefieldRemake.csprojAssemblyReference.cache
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\obj\Debug\MinefieldRemake.Form1.resources
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\obj\Debug\MinefieldRemake.Properties.Resources.resources
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\obj\Debug\MinefieldRemake.csproj.GenerateResource.cache
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\obj\Debug\MinefieldRemake.csproj.CoreCompileInputs.cache
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\obj\Debug\MinefieldRemake.exe
+C:\Users\ahmet\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\obj\Debug\MinefieldRemake.pdb
