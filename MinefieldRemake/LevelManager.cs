@@ -20,6 +20,11 @@ namespace MinefieldRemake
         private int Width { get; set; }
         private int Height { get; set; }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        private int RefI { get; set; }
+        private int RefJ { get; set; }
+>>>>>>> test
 =======
         private int RefI { get; set; }
         private int RefJ { get; set; }
@@ -52,7 +57,10 @@ namespace MinefieldRemake
         public void Load()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             //TODO
+=======
+>>>>>>> test
 =======
 >>>>>>> test
             for (int i = 0; i < ColumnCount; i++)
@@ -65,8 +73,14 @@ namespace MinefieldRemake
                     boxes[i, j].BackColor = Color.White;
                     boxes[i, j].Cursor = Cursors.Hand;
 <<<<<<< HEAD
+<<<<<<< HEAD
                     boxes[i, j].Tag = "box";
                     screen.Controls.Add(boxes[i, j]);
+=======
+                    boxes[i, j].BackColor = Color.Green;
+                    screen.Controls.Add(boxes[i, j]);
+                    boxes[i, j].Click += new System.EventHandler(Click);
+>>>>>>> test
 =======
                     boxes[i, j].BackColor = Color.Green;
                     screen.Controls.Add(boxes[i, j]);
@@ -86,6 +100,7 @@ namespace MinefieldRemake
             //TODO
         }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         //Update Game
         public void Update()
@@ -117,6 +132,8 @@ namespace MinefieldRemake
             }
         }
 =======
+=======
+>>>>>>> test
         //Click 
         public void Click(object sender, EventArgs e)
         {
@@ -129,6 +146,9 @@ namespace MinefieldRemake
             }
         }
 
+<<<<<<< HEAD
+>>>>>>> test
+=======
 >>>>>>> test
     }
 }

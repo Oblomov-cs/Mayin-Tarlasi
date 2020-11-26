@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+using System.Drawing;
+>>>>>>> test
 =======
 using System.Drawing;
 >>>>>>> test
@@ -36,12 +40,16 @@ namespace MinefieldRemake
         {
             boxes[RowNumber,ColumnNumber].Tag = "mine";
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
 
         //Change Mine Loc. Per Click
         public void Update(Panel[,] boxes)
         {
 
+=======
+            boxes[RowNumber, ColumnNumber].BackColor = Color.Blue;
+>>>>>>> test
 =======
             boxes[RowNumber, ColumnNumber].BackColor = Color.Blue;
 >>>>>>> test

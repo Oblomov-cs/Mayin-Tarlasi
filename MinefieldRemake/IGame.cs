@@ -11,8 +11,11 @@ namespace MinefieldRemake
     {
         void Load();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         void Update();
+=======
+>>>>>>> test
 =======
 >>>>>>> test
     }

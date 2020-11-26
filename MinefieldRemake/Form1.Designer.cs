@@ -32,7 +32,10 @@ namespace MinefieldRemake
             this.components = new System.ComponentModel.Container();
             this.GameTimer = new System.Windows.Forms.Timer(this.components);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panel1 = new System.Windows.Forms.Panel();
+=======
+>>>>>>> test
 =======
 >>>>>>> test
             this.SuspendLayout();
@@ -40,6 +43,7 @@ namespace MinefieldRemake
             // GameTimer
             // 
             this.GameTimer.Enabled = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.GameTimer.Tick += new System.EventHandler(this.Update);
             // 
@@ -52,6 +56,8 @@ namespace MinefieldRemake
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
 =======
 >>>>>>> test
+=======
+>>>>>>> test
             // 
             // Form1
             // 
@@ -60,7 +66,10 @@ namespace MinefieldRemake
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(784, 341);
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Controls.Add(this.panel1);
+=======
+>>>>>>> test
 =======
 >>>>>>> test
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -78,7 +87,10 @@ namespace MinefieldRemake
 
         private System.Windows.Forms.Timer GameTimer;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.Panel panel1;
+=======
+>>>>>>> test
 =======
 >>>>>>> test
     }
