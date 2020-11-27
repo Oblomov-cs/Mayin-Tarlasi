@@ -19,8 +19,6 @@ namespace MinefieldRemake
         private int RefY { get; set; }
         private int Width { get; set; }
         private int Height { get; set; }
-        private int RefI { get; set; }
-        private int RefJ { get; set; }
         #endregion
 
         #region GLOBAL VARIABLES
@@ -57,9 +55,11 @@ namespace MinefieldRemake
                     boxes[i, j].Size = new Size(Width, Height);
                     boxes[i, j].BackColor = Color.White;
                     boxes[i, j].Cursor = Cursors.Hand;
-                    boxes[i, j].BackColor = Color.Green;
+                    boxes[i, j].BackColor = Color.Gray;
+                    boxes[i, j].BorderStyle = BorderStyle.FixedSingle;
+                    boxes[i, j].Tag = "init";
+                    boxes[i, j].MouseClick += new MouseEventHandler(Click);
                     screen.Controls.Add(boxes[i, j]);
-                    boxes[i, j].Click += new System.EventHandler(Click);
                     RefX += Width + 10;
                 }
                 RefY += Height + 10;
@@ -68,23 +68,58 @@ namespace MinefieldRemake
             mine.Load(boxes);
         }
 
-        //When user does mouse rigth click, add flag
-        public void AddFlag()
+        //Click Handler
+        private void Click(object sender, MouseEventArgs e)
         {
-            //TODO
-        }
-
-        //Click 
-        public void Click(object sender, EventArgs e)
-        {
-            //TODO
             Panel currentBox = (Panel)sender;
-            if ((string)currentBox.Tag=="mine")
+            if (GameState == "playing")
             {
-                //TODO
-                MessageBox.Show("Over!");
+                //Left Mouse Click
+                if (e.Button == MouseButtons.Left)
+                {
+                    if ((string)currentBox.Tag == "init")
+                    {
+                        currentBox.Tag = "box";
+                        currentBox.BackColor = Color.Green;
+                        currentBox.Enabled = false;
+                        mine.Load(boxes);
+                        AddPoint();
+                    }
+                    if ((string)currentBox.Tag=="mine")
+                    {
+                        GameState = "lost";
+                        isGameOver();
+                        return;
+                    }
+                    if (GamePoint==(ColumnCount*RowCount)-1)
+                    {
+                        GameState = "win";
+                        isGameOver();
+                        return;
+                    }
+                }
             }
         }
 
+        //Check If Game is over
+        private void isGameOver()
+        {
+            if (GameState == "lost")
+            {
+                //TODO
+                MessageBox.Show("You Lose!");
+            }
+            else if (GameState == "win")
+            {
+                //TODO
+                MessageBox.Show("You Win!");
+            }
+        }
+
+        //Add Point
+        private void AddPoint()
+        {
+            GamePoint ++;
+        }
     }
 }
