@@ -19,12 +19,15 @@ namespace MinefieldRemake
         private int RefY { get; set; }
         private int Width { get; set; }
         private int Height { get; set; }
+        private string EndingText { get; set; }
+        private string FacePath { get; set; }
         #endregion
 
         #region GLOBAL VARIABLES
         Panel[,] boxes;
         Form screen;
         Mine mine;
+        Panel mineBox;
         #endregion
 
         //Constructor
@@ -87,6 +90,7 @@ namespace MinefieldRemake
                     }
                     if ((string)currentBox.Tag=="mine")
                     {
+                        mineBox = currentBox;
                         GameState = "lost";
                         isGameOver();
                         return;
@@ -106,13 +110,19 @@ namespace MinefieldRemake
         {
             if (GameState == "lost")
             {
-                //TODO
-                MessageBox.Show("You Lose!");
+                mineBox.BackColor = Color.Red;
+                EndingText = "You Lose!";
+                FacePath = $@"C:\Users\{Environment.UserName}\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\Sprites\sulkyface.png";
+                Form endingForm = new EndingForm(EndingText,FacePath);
+                endingForm.ShowDialog();
             }
             else if (GameState == "win")
             {
-                //TODO
-                MessageBox.Show("You Win!");
+                mineBox.BackColor = Color.Red;
+                EndingText = "You Win!";
+                FacePath = $@"C:\Users\{Environment.UserName}\OneDrive\Desktop\Github\MayinTarlasi\MinefieldRemake\Sprites\smileface.png";
+                Form endingForm = new EndingForm(EndingText, FacePath);
+                endingForm.ShowDialog();
             }
         }
 

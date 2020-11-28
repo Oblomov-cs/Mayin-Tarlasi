@@ -17,7 +17,7 @@ namespace MinefieldRemake
 
         #region GLOBAL VARIABLES
         Random rnd;
-        int RefX, RefY, guessCount;
+        int refX, refY, guessCount;
         #endregion
 
         //Constructor
@@ -37,10 +37,9 @@ namespace MinefieldRemake
                 if ((string)boxes[RowNumber,ColumnNumber].Tag=="init")
                 {
                     boxes[RowNumber, ColumnNumber].Tag = "mine";
-                    boxes[RowNumber, ColumnNumber].BackColor = Color.Red;
                     Delete(boxes);
-                    RefX = RowNumber;
-                    RefY = ColumnNumber;
+                    refX = RowNumber;
+                    refY = ColumnNumber;
                     guessCount -= 1;
                     break;
                 }
@@ -50,8 +49,7 @@ namespace MinefieldRemake
         //Delete Older Mine
         private void Delete(Panel[,] boxes)
         {
-            boxes[RefX, RefY].Tag = "init";
-            boxes[RefX, RefY].BackColor = Color.Gray;
+            boxes[refX, refY].Tag = "init";
         }
     }
 }
